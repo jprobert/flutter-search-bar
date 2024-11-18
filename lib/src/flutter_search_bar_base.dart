@@ -102,7 +102,8 @@ class SearchBar {
   ///
   /// This adds a route that listens for onRemove (and stops the search when that happens), and then calls [setState] to rebuild and start the search.
   void beginSearch(context) {
-    ModalRoute.of(context)!.addLocalHistoryEntry(LocalHistoryEntry(onRemove: () {
+    ModalRoute.of(context)!
+        .addLocalHistoryEntry(LocalHistoryEntry(onRemove: () {
       setState(() {
         isSearching.value = false;
       });
@@ -151,7 +152,7 @@ class SearchBar {
               hintStyle: inBar
                   ? null
                   : TextStyle(
-                      color: theme.textTheme.headline4!.color,
+                      color: theme.textTheme.headlineLarge!.color,
                     ),
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
